@@ -10,4 +10,7 @@ parameters:
     checkOctaneCompatibility: true
     checkModelProperties: true
     checkMissingIterableValueType: false
-
+    ignoreErrors:
+        -
+            message: '#Access to an undefined property [a-zA-Z0-9\\_]+::\$id#'
+            path: src/DataTableComponent/LivewireCrudDataTable.php

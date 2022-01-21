@@ -143,9 +143,9 @@ abstract class LivewireCrudService
 
     /**
      * @param array $attributes
-     * @return bool
+     * @return Model
      */
-    public function createModel(array $attributes): bool
+    public function createModel(array $attributes): Model
     {
         return $this->getModel()::create($attributes);
     }
@@ -153,18 +153,18 @@ abstract class LivewireCrudService
     /**
      * @param int|string $id
      * @param array $attributes
-     * @return bool
+     * @return bool|int
      */
-    public function updateModel(int|string $id, array $attributes): bool
+    public function updateModel(int|string $id, array $attributes): bool|int
     {
         return $this->getModel()::where($this->getModel()->getKeyName(), $id)->update($attributes);
     }
 
     /**
      * @param int|string $id
-     * @return bool
+     * @return int
      */
-    public function deleteModel(int|string $id): bool
+    public function deleteModel(int|string $id): int
     {
         return $this->getModel()::destroy($id);
     }
