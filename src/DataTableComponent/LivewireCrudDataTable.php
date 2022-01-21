@@ -59,11 +59,12 @@ abstract class LivewireCrudDataTable extends DataTableComponent
         foreach ($this->getColumns() as $columnName => $columnData) {
             $isBlank = false;
 
-            if (isset($columnData['table']) && !$columnData['table']) {
+            if (isset($columnData['table']) && ! $columnData['table']) {
                 continue;
             }
             if ($columnData instanceof Column) {
                 $columns[] = $columnData;
+
                 continue;
             }
 
@@ -82,11 +83,12 @@ abstract class LivewireCrudDataTable extends DataTableComponent
                 $baseRoute = $this->getService()->getBaseRoute();
                 if (isset($columnData['actions'])) {
                     $newColumn->format(function ($row) use ($columnData, $baseRoute) {
-                        return view('livewire-crud::partials.actions',
+                        return view(
+                            'livewire-crud::partials.actions',
                             [
                                 'rowData' => $row,
                                 'actions' => $columnData['actions'],
-                                'routeBase' => $baseRoute
+                                'routeBase' => $baseRoute,
                             ]
                         );
                     });
@@ -94,16 +96,16 @@ abstract class LivewireCrudDataTable extends DataTableComponent
             }
 
             // Sort / Search
-            if ($isBlank === false && (!isset($columnData['sortable']) || $columnData['sortable'])) {
+            if ($isBlank === false && (! isset($columnData['sortable']) || $columnData['sortable'])) {
                 $newColumn->sortable(
-                    isset($columnData['sortable']) && !is_bool($columnData['sortable'])
+                    isset($columnData['sortable']) && ! is_bool($columnData['sortable'])
                         ? $columnData['sortable']
                         : null
                 );
             }
-            if ($isBlank === false && (!isset($columnData['searchable']) || $columnData['searchable'])) {
+            if ($isBlank === false && (! isset($columnData['searchable']) || $columnData['searchable'])) {
                 $newColumn->searchable(
-                    isset($columnData['searchable']) && !is_bool($columnData['searchable'])
+                    isset($columnData['searchable']) && ! is_bool($columnData['searchable'])
                         ? $columnData['searchable']
                         : null
                 );

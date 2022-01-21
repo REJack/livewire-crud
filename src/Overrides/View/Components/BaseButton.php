@@ -73,8 +73,7 @@ abstract class BaseButton extends Component
         ?string $spinner = null,
         ?string $loadingDelay = null,
         ?string $href = null
-    )
-    {
+    ) {
         $this->xs = $xs;
         $this->md = $md;
         $this->lg = $lg;

@@ -94,7 +94,7 @@ abstract class LivewireCrudService
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function getTableAuthorization(): bool
     {
@@ -102,7 +102,7 @@ abstract class LivewireCrudService
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function getCreateAuthorization(): bool
     {
@@ -110,7 +110,7 @@ abstract class LivewireCrudService
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function getEditAuthorization(): bool
     {
@@ -118,7 +118,7 @@ abstract class LivewireCrudService
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function getShowAuthorization(): bool
     {
