@@ -2,13 +2,25 @@
 
 namespace REJack\LivewireCrud\Controllers;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use REJack\LivewireCrud\Services\LivewireCrudService;
 
 abstract class CrudController extends Controller
 {
+    /**
+     * @return string
+     */
+    abstract public function getServiceClass(): string;
+
+    /**
+     * @return LivewireCrudService
+     */
+    public function getService(): LivewireCrudService
+    {
+        return app($this->getServiceClass());
+    }
+
     /**
      * @return string
      */
@@ -57,18 +69,6 @@ abstract class CrudController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        // ToDo: replace with correct response
-        return response()->redirectTo('');
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param int|string $id
@@ -88,40 +88,5 @@ abstract class CrudController extends Controller
     public function edit(int|string $id): Response
     {
         return response()->view('livewire-crud::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param int|string $id
-     * @return RedirectResponse
-     */
-    public function update(Request $request, int|string $id): RedirectResponse
-    {
-        // ToDo: replace with correct response
-        return response()->redirectTo('');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int|string $id
-     * @return RedirectResponse
-     */
-    public function destroy(int|string $id): RedirectResponse
-    {
-        // ToDo: replace with correct response
-        return response()->redirectTo('');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int|string $id
-     * @return void
-     */
-    public function destroyModal(int|string $id): void
-    {
     }
 }
