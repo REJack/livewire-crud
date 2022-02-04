@@ -30,6 +30,11 @@
 
 ## Docs Stuff prep
 
+Install these two Composer Packages
+
+- rappasoft/laravel-livewire-tables
+- wireui/wireui
+
 Add these two line in your app.blade.php to enable notifications and/or dialogs
 
 ```html
