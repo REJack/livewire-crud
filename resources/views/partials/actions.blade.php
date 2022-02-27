@@ -19,6 +19,7 @@
         @endphp
         <x-button :color="$action['color'] ?? $builtInData['color'] ?? 'dark'"
                   :href="route($route, [$rowData->id])"
+                  :flat="$flat ?? false"
                   :icon="$action['icon'] ?? $builtInData['icon'] ?? null"
                   class="!inline-flex {{ $action['classes'] ?? '' }} {{ $basicClasses }} {{ $spacerClass }}"
                   :label="$label"/>

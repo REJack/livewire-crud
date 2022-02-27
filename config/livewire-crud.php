@@ -27,6 +27,7 @@ return [
             'label' => 'Show',
             'icon' => 'eye',
             'iconOnly' => true,
+            'flat' => false,
         ],
         'edit' => [
             'routeEnd' => 'edit',
@@ -34,6 +35,7 @@ return [
             'label' => 'Edit',
             'icon' => 'pencil',
             'iconOnly' => true,
+            'flat' => false,
         ],
         'delete' => [
             'routeEnd' => 'destroy',
@@ -41,6 +43,7 @@ return [
             'label' => 'Delete',
             'icon' => 'trash',
             'iconOnly' => true,
+            'flat' => false,
         ],
     ],
 ];
